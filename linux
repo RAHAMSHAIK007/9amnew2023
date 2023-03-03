@@ -1,0 +1,31 @@
+FILE COMMANDS:
+
+touch filename		: to create a file
+ls							: to list the file name
+ll							: full information of file
+ll -a					: to see the hidden files
+ls -a					: to see the hidden files
+cat file1				: to see the content
+more file1			: to see the content
+cat>file1				: to insert content
+cat>>file1			: to insert content 2 nd time -----
+touch raham{1..10}: it will create raham1 to raham10 files
+
+==================================================
+
+cp file1 file2			: to copy content of file1 to file2
+mv file1 file2	  		: to rename or move file1 to file2
+rm file3					: to remove file3
+rm -f file4			  : to remove file4 forcefully
+rm -f *						: to remove forecfully all files
+head file1				: to print top 10 lines
+head -5 file1			: to print top 5 lines
+tail file1				: to print bottom 10 lines
+tail -5 file1			: to print bottom 5 lines
+wc	file1					: shows lines, words and characters of file1
+mkdir nareshit			: to create a folder called nareshit
+cd nareshit				: to go inside the nareshit folder
+cd ..						: to come back from one folder
+pwd							: print/present working directory
+
+
