@@ -1,0 +1,59 @@
+ 1  ll
+    2  ls
+    3  touch file1
+    4  cat>file1
+    5  cat file1
+    6  ll
+    7  cat file1
+    8  more file1
+    9  vi file1
+   10  cat file1
+   11  vim= file1
+   12  vim file1
+   13  cat file1
+   14  vim file1 '
+
+
+   15  vim file1
+   16  cat file1
+   17  vim file1
+   18  vim
+   19  vim file1
+   20  rm -rf file1
+   21  vim file1
+   22  cat file1
+   23  vim file1
+   24  cat file1
+   25  wc file1
+   26  cat file1
+   27  cat -n file1
+   28  vim file1 '
+   29  vim file1
+   30  cat -n file1
+   31  more -n file1
+   32  vim file1
+   33  ll
+   34  chmod 767 file1
+   35  ll
+   36  touch file2
+   37  ll
+   38  chmod 666 file2
+   39  ll
+   40  chmod u=rwx,g=rwx,o=r file1
+   41  ll
+   42  touch file3
+   43  ll
+   44  chmod +x file3
+   45  ll
+   46  useradd raham
+   47  chown raham file1
+   48  ll
+   49  chgrp raham file1
+   50  ll
+   51  chown raham:raham file2
+   52  ll
+   53  useradd rajesh
+   54  ll
+   55  chown rajesh:rajesh file3
+   56  ll
+   57  history
