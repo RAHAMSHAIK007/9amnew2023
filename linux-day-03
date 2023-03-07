@@ -54,3 +54,31 @@
    54  uname
    55  cat /etc/os-release
    56  history
+   
+   =========================================================================================================================================================
+   
+   useradd	ramu			: to create user
+cat /etc/passwd		: to check list of users
+getent passwd			: to check list of users
+passwd ramu				: to assign password
+visudo						: the file used to make normal user to super user
+
+cat /etc/group		: to check list of groups
+getent group			: to check list of groups
+
+cat /etc/shadow		: to check password information
+groupadd devops		: to create a group
+usermod -a -G awscloud raham : to add user to the group
+userdel raham			: to delete the user
+
+==========================================================
+HARDWARE:
+
+cat /proc/cpuinfo  (or) lscpu : to show cpu information
+cat /proc/meminfo  (or) lsmem : to show memory information
+cat /etc/os-release					: to check flavour of linux server
+lsblk (or) fdisk -l					: to show the block information
+free (or) free -m						: to show free memory
+df (or) df -m							: to show mounted device information
+==========================================================
+
