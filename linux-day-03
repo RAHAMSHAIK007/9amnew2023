@@ -1,0 +1,56 @@
+ 1  useradd ramu
+    2  ls
+    3  ll
+    4  cat /etc/passwd
+    5  getent passwd
+    6  passwd ramu
+    7  visudo
+    8  su - ramu
+    9  useradd raham
+   10  passwd raham
+   11  su - raham
+   12  visudo
+   13  su - raham
+   14  cat /etc/passwd
+   15  getent passwd
+   16  cat /etc/passwd
+   17  cat /etc/group
+   18  getent group
+   19  cat /etc/shadow
+   20  id raham
+   21  groupadd devops
+   22  id raham
+   23  usermod -a -G devops raham
+   24  id raham
+   25  groupadd awscloud
+   26  id raham
+   27  usermod -a -G awscloud raham
+   28  id raham
+   29  cd /home/
+   30  ll
+   31  useradd gopi
+   32  ll
+   33  cat /etc/passwd
+   34  cat /etc/group
+   35  userdel gopi
+   36  cat /etc/group
+   37  ll
+   38  touch file1
+   39  ll
+   40  chown raham:raham file1
+   41  ll
+   42  dmesg
+   43  dmidecode
+   44  cat /proc/cpuinfo
+   45  lscpu
+   46  cat /proc/meminfo
+   47  lsmem
+   48  lsblk
+   49  fdisk -l
+   50  free
+   51  free -m
+   52  df
+   53  df -m
+   54  uname
+   55  cat /etc/os-release
+   56  history
