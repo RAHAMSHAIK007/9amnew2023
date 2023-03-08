@@ -1,0 +1,44 @@
+ 1  mkdir swiggy
+    2  cd swiggy/
+    3  yum install git
+    4  ls -al
+    5  git init
+    6  ll
+    7  pwd
+    8  ll -a
+    9  ls -a
+   10  vim file
+   11  mv file file1
+   12  ll
+   13  git status
+   14  git add file1
+   15  git status
+   16  git commit -m "commit-1" file1
+   17  git status
+   18  ll
+   19  touch file2
+   20  git status
+   21  git add file2
+   22  git status
+   23  git commit -m "commit-2" file2
+   24  git status
+   25  ll
+   26  git log
+   27  git config user.name "raham"
+   28  git config user.email "raham@gmail.com"
+   29  git log
+   30  touch abc{1..5}
+   31  git status
+   32  git add *
+   33  git status
+   34  git commit -m "commit-3" *
+   35  git log
+   36  touch java{1..5}
+   37  ll
+   38  git status
+   39  vim .gitignore
+   40  git status
+   41  vim .gitignore
+   42  git status
+   43  ll
+   44  history
