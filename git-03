@@ -1,0 +1,84 @@
+ 1  mkdir zomato
+    2  cd zomato/
+    3  yum install git -y
+    4  git status
+    5  git add
+    6  git init
+    7  git branch -m moviebranch
+    8  touch movie{1..5}
+    9  git status
+   10  git add *
+   11  git status
+   12  git commit -m "dev-1 commits" *
+   13  git branch tarinbranch
+   14  git checkout tarinbranch
+   15  touch train{1..5}
+   16  git add *
+   17  git commit -m "dev-2 commits" *
+   18  git checkout -b dthbranch
+   19  touch dth{1..5}
+   20  git add *
+   21  git commit -m "dev-3 commits" *
+   22  ll
+   23  git checkout -b insurancebranch
+   24  touch insurance{1..5}
+   25  git add *
+   26  git commit -m "dev-4 commits" *
+   27  git branch
+   28  ll
+   29  git checkout -b master
+   30  ll
+   31  git remote add origin https://github.com/RAHAMSHAIK007/paytm9am.git
+   32  git branch
+   33  git push origin master
+   34  git checkout moviebranch
+   35  ll
+   36  git push origin moviebranch
+   37  ps
+   38  kill -9 3536
+   39  git push origin moviebranch
+   40  git checkout tarinbranch
+   41  ll
+   42  git push origin tarinbranch
+   43  ps
+   44  kill -9 3581 3536
+   45  git push origin tarinbranch
+   46  git checkout dthbranch
+   47  ll
+   48  git push origin dthbranch
+   49  git checkout moviebranch
+   50  ll
+   51  git merge tarinbranch
+   52  ll
+   53*
+   54  git revert tarinbranch
+   55  ll
+   56  cd
+   57  ll
+   58  git clone https://github.com/Yashoda25/new-task.git
+   59  ll
+   60  cd new-task/
+   61  ll
+   62  cd
+   63  cd zomato/
+   64  git log
+   65  git log --oneline
+   66  git log --oneline -2
+   67  git log --oneline -1
+   68  git log
+   69  git show e43d21555443e01d6b37b2cc0433103b46ab9fa6
+   70  ll
+   71  git logs
+   72  git log
+   73  git show ffce4f8e89e643896225ff316134389ae5a6cf86
+   74  vim movie5
+   75  git add movie5
+   76  git commit -m "new commits" movie5
+   77  git diff movie5
+   78  git show movie5
+   79  vim movie5
+   80  git add movie5
+   81  git commit -m "new-1 commits" movie5
+   82  git diff movie5
+   83  git show movie5
+   84  history
