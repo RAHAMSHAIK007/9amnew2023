@@ -1,0 +1,107 @@
+ 1  mkdir abcd
+    2  cd abcd/
+    3  yum install git -y
+    4  ll
+    5  git init
+    6  git branch -m branch1
+    7  touh file1
+    8  vim file1
+    9  git add file1
+   10  git commit -m "commit-1" file1
+   11  git checkout -b branch2
+   12  vim file1
+   13  git add file1
+   14  git commit -m "commit-2" file1
+   15  cat file1
+   16  git checkout branch
+   17  git checkout branch1
+   18  ll
+   19  cat file1
+   20  vim file1
+   21  git add file1
+   22  git commit -m "commit-3" file1
+   23  cat file1
+   24  git merge branch2
+   25  git diff file1
+   26  vim file1
+   27  git add file1
+   28  git commit -m "commit-4" file1
+   29  git commit -m "commit-4"
+   30  cd ..
+   31  mkdir raham
+   32  cd raham/
+   33  ll
+   34  touch file1
+   35  git add file1
+   36  git init
+   37  git add file1
+   38  ll
+   39  git stash
+   40  git commit -m "raham" file1
+   41  ll
+   42  touch file2
+   43  git add file2
+   44  ll
+   45  git stash
+   46  ll
+   47  touch file3
+   48  git add file3
+   49  git stash
+   50  ll
+   51  touch file4
+   52  git add file4
+   53  ll
+   54  git stash
+   55  ll
+   56  git stash apply
+   57  ll
+   58  git stash apply
+   59  ll
+   60  git stash list
+   61  git stash show stash@{0}
+   62  git stash show stash@{1}
+   63  git stash show stash@{2}
+   64  git stash list
+   65  git stash pop
+   66  git stash list
+   67  git stash clear
+   68  git stash list
+   69  ll
+   70  touch file5
+   71  git stash
+   72  ll
+   73  git add file5
+   74  git stash
+   75  ll
+   76  git stash apply
+   77  ll
+   78  cd
+   79  rm -rf *
+   80  ll
+   81  git clone https://github.com/RAHAMSHAIK007/11ambatch2023.git
+   82  ll
+   83  cd 11ambatch2023/
+   84  ll
+   85  git pull
+   86  cat RWTF.txt
+   87  ll
+   88  git pull
+   89  git fetch
+   90  ll
+   91  git pull
+   92  ll
+   93  cd
+   94  git branch
+   95  cd 11ambatch2023/
+   96  git branch
+   97  git branch branch1
+   98  git branch branch2
+   99  git branch
+  100  git branch -m branch2 raham
+  101  git branch
+  102  git branch -m branch1 devops
+  103  git branch
+  104  git branch -D devops
+  105  git branch
+  106  cd
+  107  history
