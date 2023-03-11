@@ -1,0 +1,12 @@
+USER-1: 
+crate 3 branches (aws, gcp, azure)
+each branch they need to create 5 files (aws1, aws2....) (content: this is my aws file1)
+merge all branches to master
+push the master branch to the github
+
+
+USER-2:
+change the content on the file and he need to push it to his own github repo
+user 2 need to intimate it to user-1 
+
+user-1 will need to check and verify the content is changed.
