@@ -1,5 +1,5 @@
 USER-1: 
-crate 3 branches (aws, gcp, azure)
+create 3 branches (aws, gcp, azure)
 each branch they need to create 5 files (aws1, aws2....) (content: this is my aws file1)
 merge all branches to master
 push the master branch to the github
