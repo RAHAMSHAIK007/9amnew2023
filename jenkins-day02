@@ -1,0 +1,15 @@
+ 7  systemctl restart jenkins.service
+    8  systemctl status jenkins.service
+    9  cd /var/lib/jenkins/workspace/abcd/
+   10  ll
+   11  cat cpu.txt
+   12  ll
+   13  cd /
+   14  ll
+   15  mkdir /tcs
+   16  ll
+   17  chown jenkins:jenkins /tcs/
+   18  ll
+   19  cd /tcs/
+   20  ll
+   21  history
