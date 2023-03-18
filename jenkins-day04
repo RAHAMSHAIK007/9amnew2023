@@ -1,0 +1,64 @@
+JENKINS SERVER:
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+amazon-linux-extras install java-openjdk11 -y
+yum install git maven jenkins -y
+systemctl start jenkins.service
+systemctl status jenkins.service
+
+ALL SEREVERS:
+
+useradd jenkins
+passwd jenkins
+visudo   ( 100 -- > yy -- > p --- > root = jenkins)
+vim /etc/ssh/sshd_config  ( 63 -- > no=yes)
+systemctl restart sshd
+systemctl status sshd
+su - jenkins
+
+JENKINS SERVER:
+
+ssh-keygen -- > enter --- > enter --- > enter
+
+ssh-copy-id jenkins@172.31.39.246
+ssh 'jenkins@172.31.39.246'
+exit
+
+=========================================================================================
+
+PART-2 : SETTING THE AGENTS
+
+install java on all nodes
+sudo amazon-linux-extras install java-openjdk11 -y
+
+Dashboard  --- > Manage Jenkins --- > Nodes  -- > new node -- > name -- >Permanent Agent  -- > create -- > 
+  
+configuration:
+
+Number of executors : 3
+Remote root directory : /tmp
+labels : swiggy
+Usage : last option
+Launch method : last option
+hostname: provate ip
+add -- > jenkins -- > user name with private key -- > usrename: ec2-user -- > pem file
+Host Key Verification Strategy: last option
+
+create
+
+pipeline {
+    agent {
+        label 'swiggy'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                git 'https://github.com/RAHAMSHAIK007/11ambatch2023.git'
+            }
+        }
+    }
+}
+
+
