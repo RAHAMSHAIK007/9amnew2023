@@ -1,0 +1,59 @@
+s-1: create users
+manage jenkins -- > user -- > create
+
+s-2: 
+manage jenkins -- > pluugins  -- > Role-based Authorization Strategy -- > install -- > Role-based Authorization Strategy
+
+s-3:
+Dashboard -- > Manage Jenkins -- > Configure Global Security -- > Authorization -- > Role-based Authorization Strategy
+
+s-4: create a role
+Dashboard -- > Manage Jenkins -- > Manage and Assign Roles -- > create 2 roles -- > fresher -- > exp
+over all read access
+fresher : hob : read & build
+exp : admin
+
+s-5: assign roles
+
+==========================================================================================================================================
+BACKUP: 
+
+Dashboard -- > Manage Jenkins -- > Plugin Manager -- > Periodic Backup &  Backup -- > 
+
+    Dashboard
+    Manage Jenkins
+    Periodic Backup Manager
+
+==========================================================================================================================================
+PIPE LINE POSTBUILD:
+
+
+pipeline {
+   agent any
+
+   stages {
+       stage('Hello') {
+           steps {
+               echo 'Hello World
+           }
+       }
+   }
+   post{
+       always {
+               echo 'THIS WILL BE PRINTED ANYWAY'
+           }
+       }
+}
+
+types:
+always
+success
+failuer
+
+note: if we do syntax mistake it wont pront anything
+
+==========================================================================================================================================
+
+VIEW 
+
+BLUE OCEAN
