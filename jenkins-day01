@@ -1,15 +1,14 @@
-STEP-1: GETTING REPO   (jenkins.io)
+#STEP-1: GETTING REPO   (jenkins.io)
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
- sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-
-STEP-2: INSTALL JAVA
+#STEP-2: INSTALL JAVA
 amazon-linux-extras install java-openjdk11 -y
 
-STEP-3: INSTALL GIT MAVEN JENKINS 
+#STEP-3: INSTALL GIT MAVEN JENKINS 
 yum install git maven jenkins -y
 
-STEP-4: STARTING JENKINS SERVEICE
+#STEP-4: STARTING JENKINS SERVEICE
 systemctl start jenkins.service
 systemctl status jenkins.service
 
