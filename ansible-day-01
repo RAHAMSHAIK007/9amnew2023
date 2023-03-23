@@ -1,0 +1,122 @@
+ANSIBLE MAIN SERVER:
+
+amazon-liunx-extras install ansible2 -y
+yum install python python-pip python-level openssl -y
+vim /etc/ansible/hosts   (line 13)
+ [dev]
+ 14 172.31.13.232
+ 15 172.31.12.34
+ 16 [test]
+ 17 172.31.4.159
+ 18 172.31.15.174
+
+vim /etc/ansible/ansible.cfg (14 & 22 uncomment)
+
+===================================================================================================
+
+ALL SERVERS:
+
+hostnamectl set-hostname master
+sudo -i
+useradd ansible
+passwd ansible
+visudo ( 100 : yy & p : root=ansible)
+vim /etc/ssh/sshd_config
+systemctl resatrt sshd
+systemctl status sshd
+su - ansible
+hostname -i
+
+===================================================================================================
+
+ANSIBLE MAIN SERVER:
+
+ssh-keygen
+ssh-copy-id ansible@172.31.15.174
+ssh ansible@172.31.15.174
+
+do it for all servers 
+
+===================================================================================================
+
+HOST PATTREN:
+
+   15  ansible all -m ping -v
+   16  ansible all --list-hosts
+   17  ansible dev --list-hosts
+   18  ansible test --list-hosts
+   19  ansible dev[0] --list-hosts
+   20  ansible dev[1] --list-hosts
+   21  ansible all --list-hosts
+   22  ansible all[1] --list-hosts
+   23  ansible all[3] --list-hosts
+   24  ansible all[4] --list-hosts
+   25  ansible all --list-hosts
+   26  ansible all[-1] --list-hosts
+   27  ansible all[-2] --list-hosts
+   28  ansible all[1:3] --list-hosts
+
+===================================================================================================
+
+ADHOC COMMANDS: Used to do the temparory works. 
+These commands will be over-rided.
+These are simple linux commands
+
+ansible all -ba "ls"
+
+
+
+ansible all -ba "yum install git -y"
+ansible all -b -m yum -a  "pkg=git state=present"
+ansible all -ba "yum install maven -y"
+ansible all -b -m yum -a "pkg=maven state=present"
+
+
+
+ 1  hostname -i
+    2  ssh-keygen
+    3  ssh-copy-id ansibl@172.31.13.232
+    4  ps
+    5  kill -9 3011]
+    6  kill -9 3011
+    7  ssh-copy-id ansible@172.31.13.232
+    8  ssh 'ansible@172.31.13.232'
+    9  ssh-copy-id ansible@172.31.12.34
+   10  ssh 'ansible@172.31.12.34'
+   11  ssh-copy-id ansible@172.31.4.159
+   12  ssh 'ansible@172.31.4.159'
+   13  ssh-copy-id ansible@172.31.15.174
+   14  ssh 'ansible@172.31.15.174'
+   15  ansible all -m ping -v
+   16  ansible all --list-hosts
+   17  ansible dev --list-hosts
+   18  ansible test --list-hosts
+   19  ansible dev[0] --list-hosts
+   20  ansible dev[1] --list-hosts
+   21  ansible all --list-hosts
+   22  ansible all[1] --list-hosts
+   23  ansible all[3] --list-hosts
+   24  ansible all[4] --list-hosts
+   25  ansible all --list-hosts
+   26  ansible all[-1] --list-hosts
+   27  ansible all[-2] --list-hosts
+   28  ansible all[1:3] --list-hosts
+   29  history
+   30  ansible all -ba "ls"
+   31  ansible all -ba "touch file1"
+   32  ansible all -ba "ls"
+   33  ansible all -ba "useradd raham"
+   34  ansible all -ba "cat /etc/passwd"
+   35  ansible all -ba "yum install git -y"
+   36  ansible all -ba "git --version"
+   37  ansible all -ba "yum remove git* -y"
+   38  ansible all -b -m yum -a  "pkg=git state=present"
+   39  ansible all -ba "git -v"
+   40  ansible all -b -m yum -a "pkg=maven state=present"
+   41  ansible all -ba "mvn --version"
+   42  ansible all -b -m yum -a "pkg=maven state=absent"
+   43  ansible all -b -m yum -a "pkg=httpd state=present"
+   44  ansible all -b -m service -a "name=httpd state=restarted"
+   45  ansible all -b -m user -a "name=abcd state=present"
+   46  ansible all -ba "cat /etc/passwd"
+   47  history
