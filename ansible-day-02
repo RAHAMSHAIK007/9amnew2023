@@ -1,0 +1,105 @@
+ 30  ansible all -ba "ls"
+   31  ansible all -ba "touch file1"
+   32  ansible all -ba "ls"
+   33  ansible all -ba "useradd raham"
+   34  ansible all -ba "cat /etc/passwd"
+   35  ansible all -ba "yum install git -y"
+   36  ansible all -ba "git --version"
+   37  ansible all -ba "yum remove git* -y"
+   38  ansible all -b -m yum -a  "pkg=git state=present"
+   39  ansible all -ba "git -v"
+   40  ansible all -b -m yum -a "pkg=maven state=present"
+   41  ansible all -ba "mvn --version"
+   42  ansible all -b -m yum -a "pkg=maven state=absent"
+   43  ansible all -b -m yum -a "pkg=httpd state=present"
+   44  ansible all -b -m service -a "name=httpd state=restarted"
+   45  ansible all -b -m user -a "name=abcd state=present"
+   46  ansible all -ba "cat /etc/passwd"
+   47  history
+   48  ansible all -ba "ls"
+   49  ansible all -ba "touch file2"
+   50  ansible all -ba "yum install tree -y"
+   51  ansible all -ba "yum remove tree -y"
+   52  ll
+   53  vim abc
+   54  ll
+   55  ansible all -b -m copy -a "src=abc"
+   56  ansible all -b -m copy -a "src=abc dest=/root"
+   57  ansible all -ba "ls"
+   58  ansible all -ba "ls /root"
+   59  ansible all -ba "pwd"
+   60  ansible all -ba "touch f1 f2 f3 f4 f5"
+   61  ansible all -ba "ls"
+   62  ll
+   63  rm -rf *
+   64  vim raham.yml
+   65  ansible-playbook raham.yml
+   66  cat raham.yml
+   67  ansible all -ba "yum remove tree -y"
+   68  vim raham.yml
+   69  ansible-playbook raham.yml
+   70  cat raham.yml
+   71  ll
+   72  vim raham.yml
+   73  cat raham.yml
+   74  ansible-playbook raham.yml --extra-vars "a=docker"
+   75  ansible all -ba "docker --version"
+   76  cat raham.yml
+   77  ansible-playbook raham.yml --extra-vars "a=java-1.8.0-openjdk"
+   78  ansible all -ba "java -version"
+   79  ansible-playbook raham.yml --extra-vars "a=git"
+   80  ansible all -ba "yum remove git* -y"
+   81  ansible-playbook raham.yml --extra-vars "a=git"
+   82  vim raham.yml
+   83  cat raham.yml
+   84  ansible-playbook raham.yml
+   85  ansible all -ba "yum remove http* -y"
+   86  ansible all -ba "yum remove httpd* -y"
+   87  ansible all -ba "yum remove httpd -y"
+   88  ansible-playbook raham.yml
+   89  ansible all -ba "httpd -v"
+   90  vim raham.yml
+   91  ansible all -ba "yum remove httpd git* docker java* -y"
+   92  cat raham.yml
+   93  ansible-playbook raham.yml --extra-vars "a=git b=docker"
+   94  ansible all -ba "git -v"
+   95  ansible all -ba "git --version"
+   96  ansible all -ba "docker --version"
+   97  ansible-playbook raham.yml --extra-vars "a=httpd b=java-1.8.0-openkjd"
+   98  ansible-playbook raham.yml --extra-vars "a=httpd b=java-1.8.0-openkjdk"
+   99  ps
+  100  kill -9 5764 5814 5815 5816 5817
+  101  kill -9 5764 5814 5815 5816 5817ps
+  102  ps
+  103  ansible-playbook raham.yml --extra-vars "a=httpd b=java-1.8.0-openjdk"
+  104  ansible all -ba "httpd -v"
+  105  ansible all -ba "java -version"
+  106  ansible all -ba "yum remove git docker httpd java* -y"
+  107  vim raham.yml
+  108  ansible-playbook raham.yml
+  109  ansible all -ba "tree -v"
+  110  ansible all -ba "tree --version"
+  111  ansible all -ba "docker --version"
+  112  cat raham.yml
+  113  vim raham.yml
+  114  ansible all -ba "yum remove httpd -y"
+  115  cat raham.yml
+  116  ansible-playbook raham.yml
+  117  ansible all -ba "systemctl status httpd"
+  118  cat raham.yml
+  119  vim raham.yml
+  120  ansible all -ba "yum remove git maven tree docker java-1.8.0-openjd httpd -y"
+  121  ansible all -ba "yum remove git maven tree docker java-1.8.0-openjdk httpd -y"
+  122  cat raham.yml
+  123  ansible-playbook raham.yml
+  124  ansible all -ba "git --version"
+  125  ansible all -ba "docker --version"
+  126  ansible all -ba "tree --version"
+  127  ansible all -ba "mvn --version"
+  128  cat raham.yml
+  129  ansible all -ba "yum remove git maven tree docker java-1.8.0-openjdk httpd -y"
+  130  vim raham.yml
+  131  cat /etc/os-release
+  132  ansible-playbook raham.yml
+  133  cat raham.yml
+  134  history
