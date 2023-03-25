@@ -22,7 +22,7 @@ useradd ansible
 passwd ansible
 visudo ( 100 : yy & p : root=ansible)
 vim /etc/ssh/sshd_config
-systemctl resatrt sshd
+systemctl restart sshd
 systemctl status sshd
 su - ansible
 hostname -i
@@ -120,3 +120,4 @@ ansible all -b -m yum -a "pkg=maven state=present"
    45  ansible all -b -m user -a "name=abcd state=present"
    46  ansible all -ba "cat /etc/passwd"
    47  history
+
