@@ -1,0 +1,115 @@
+ 1  ssh-keygen
+    2  ssh-copy-id ansible@172.31.36.27
+    3  rm -rf .ssh/*
+    4  ssh-keygen
+    5  ssh-copy-id ansible@172.31.36.27
+    6  ls -al
+    7  cd .ssh/
+    8  ll
+    9  cat id_rsa
+   10  cat id_rsa.pub 
+   11  cat known_hosts 
+   12  ls .ssh/
+   13  ssh-copy-id ansible@172.31.36.27
+   14  ssh-copy-id ansible@172.31.42.0
+   15  ansible all -m ping -v
+   16  vim abc.yml
+   17  ll
+   18  mkdir playbook
+   19  cd playbook/
+   20  ll
+   21  mkdir roles
+   22  mkdir roles/a
+   23  mkdir roles/a/tasks
+   24  yum install tree -y
+   25  sudo yum install tree -y
+   26  tree
+   27  vim master.yml
+   28  cat master.yml 
+   29  vim roles/a/tasks/main.yml
+   30  tree
+   31  cat master.yml 
+   32  mkdir roles/b
+   33  mkdir roles/b/tasks
+   34  vim roles/b/tasks/main.yml
+   35  tree
+   36  cat master.yml 
+   37  ansible-playbook master.yml 
+   38  vim master.yml 
+   39  ansible-playbook master.yml 
+   40  tree
+   41  mkdir roles/raham
+   42  mkdir roles/raham/tasks
+   43  vim roles/raham/tasks/main.yml
+   44  tree
+   45  vim master.yml 
+   46  ansible-playbook master.yml 
+   47  ansible all -ba "yum remove git docker java-1.8.0-openjdk -y"
+   48  ll
+   49  cd
+   50  rm -rf *
+   51  ll
+   52  vim raham.yml
+   53  ansible-playbook raham.yml 
+   54  cat raham.yml 
+   55  vim raham.yml 
+   56  cat raham.yml 
+   57  ansible-playbook raham.yml --tags b
+   58  ansible-playbook raham.yml --tags d
+   59  cat raham.yml 
+   60  ansible-playbook raham.yml --tags a,c
+   61  ansible all -ba "yum remove git tree docker httpd -y"
+   62  cat raham.yml 
+   63  ansible-playbook raham.yml --skip-tags "c"
+   64  ansible all -ba "yum remove git tree docker httpd -y"
+   65  ll
+   66  vim raham.yml 
+   67  ll
+   68  cat raham.yml 
+   69  vim creds
+   70  cat creds 
+   71  rm -rf creds 
+   72  ansible-vault create creds
+   73  cat creds 
+   74  ansible-vault edit creds
+   75  cat creds 
+   76  ansible-vault rekey creds
+   77  ansible-vault decrypt creds
+   78  cat creds 
+   79  ansible-vault encrypt creds
+   80  cat creds 
+   81  ansible-vault view creds
+   82  cat creds 
+   83  ll
+   84  rm -rf creds 
+   85  ll
+   86  ansible-vault encrypt raham.yml 
+   87  ansible-playbook raham.yml 
+   88  cat raham.yml 
+   89  ansible-vault decsrypt raham.yml 
+   90  ansible-vault decrypt raham.yml 
+   91  ansible-playbook raham.yml 
+   92  ansible all -ba "yum remove git -y"
+   93  vim raham.yml 
+   94  cat raham.yml 
+   95  ansible-playbook raham.yml 
+   96  ansible all -ba "yum remove git -y"
+   97  vim raham.yml 
+   98  cat raham.yml 
+   99  ansible all -ba "yum remove git -y"
+  100  ansible-playbook raham.yml 
+  101  ansible all -ba "yum install python -y"
+  102  vim raham.yml 
+  103  ansible-playbook raham.yml 
+  104  ansible all -ba "yum install pip -y"
+  105  ansible-playbook raham.yml 
+  106  vim raham.yml 
+  107  ansible-playbook raham.yml 
+  108  vim raham.yml 
+  109  ll
+  110  ansible-playbook raham.yml 
+  111  vim raham.yml 
+  112  ansible-playbook raham.yml 
+  113  vim raham.yml 
+  114  ansible-playbook raham.yml 
+  115  history
