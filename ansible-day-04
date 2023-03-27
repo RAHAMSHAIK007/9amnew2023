@@ -1,0 +1,116 @@
+ 119  ansible-galaxy init raham
+  120  ll
+  121  tree
+  122  ansible-galaxy init xyz
+  123  ll
+  124  ansible-galaxy search java
+  125  ansible-galaxy init colstrom.java
+  126  ll
+  127  tree
+  128  ansible-galaxy search --author colstrom
+  129  cd /home/ansible/.ansible/
+  130  ll
+  131  ansible-galaxy collection install alikins.collection_inspect
+  132  cd /home/ansible/.ansible/collections/ansible_collections/alikins/collection_inspect
+  133  ll
+  134  cd
+  135  ll
+  136  rm -rf *
+  137  vim abc.yml
+  138  ansible-playbook abc.yml
+  139  vim abc.yml
+  140  ansible-playbook abc.yml
+  141  vim abc.yml
+  142  ansible-playbook abc.yml
+  143  ansible all --list-hosts
+  144  ansible 172.31.42.0 -m setup
+  145  ansible 172.31.42.0 -m setup {{ansible_os_family}}
+  146  ansible 172.31.42.0 -m setup "filter=ansible_os_family"
+  147  ansible 172.31.42.0 -m setup -a "filter=ansible_os_family"
+  148  ansible 172.31.42.0 -m setup
+  149  ansible 172.31.42.0 -m setup -a "filter=ansible_os_family"
+  150  ansible 172.31.42.0 -m setup
+  151  ansible 172.31.42.0 -m setup -a "filter=ansible_os_family"
+  152  ansible 172.31.42.0 -m setup -a "filter=ansible_os_famil"
+  153  ansible 172.31.42.0 -m setup | grep -i ansible_os
+  154  ansible 172.31.42.0 -m setup | grep -i family
+  155  ansible 172.31.42.0 -m setup -a "filter=ansible_os_family"
+  156  ansible 172.31.42.0 -m setup -a "filter=ansible_os_famly"
+  157  ansible 172.31.42.0 -m setup | grep -i family
+  158  ansible 172.31.42.0 -m setup | grep -i cpu
+  159  ansible 172.31.42.0 -m setup -a "filter=ansible_processor_vcpus"
+  160  ansible 172.31.42.0 -m setup | grep -i pkg
+  161  vim message.j2
+  162  cat message.j2
+  163  vim abc.yml
+  164  ansible-playbook abc.yml
+  165  cat abc.yml
+  166  vim abc.yml
+  167  ansible-playbook abc.yml
+  168  pwd
+  169  vim abc.yml
+  170  ansible-playbook abc.yml
+  171  vim abc.yml
+  172  ll
+  173  ansible-playbook abc.yml
+  174  vim abc.yml
+  175  ansible-playbook abc.yml
+  176  cat message.j2
+  177  vim abc.yml
+  178  ansible-playbook abc.yml
+  179  ansible-playbook abc.yml > xyz.txt
+  180  ll
+  181  cat xyz.txt
+  182  vim abc.yml
+  183  ansible-playbook abc.yml > xyz.txt
+  184  cat xyz.txt
+  185  ll
+  186  rm -rf message.j2 xyz.txt
+  187  ll
+  188  vim app.yml
+  189  cat app.yml
+  190  vim abc.yml
+  191  ansible-playbook abc.yml
+  192  ll
+  193  rm -rf *
+  194  mkdir playbook
+  195  cd playbook/
+  196  ll
+  197  mkdir roles
+  198  mkdir roles/config/
+  199  mkdir roles/config/tasks
+  200  mkdir roles/deploy
+  201  mkdir roles/deploy/tasks
+  202  tree
+  203  vim roles/config/tasks/main.yml
+  204  vim roles/deploy/tasks/main.yml
+  205  tree
+  206  car roles/config/tasks/main.yml
+  207  cat roles/config/tasks/main.yml
+  208  cat roles/deploy/tasks/main.yml
+  209  ll
+  210  vim master.yml
+  211  ansible-playbook master.yml
+  212  ansible all -ba "httpd -v"
+  213  ll
+  214  vim roles/config/tasks/main.yml
+  215  ansible all -ba "httpd -v"
+  216  ansible-playbook master.yml
+  217  vim roles/deploy/tasks/main.yml
+  218  vim master.yml
+  219  ansible-playbook master.yml
+  220  ansible all -ba "rm -rf /home/ansible/wq*
+  221  ansible all -ba "rm -rf /home/ansible/v*"
+  222  ansible-playbook master.yml
+  223  ll
+  224  vim master.yml
+  225  vim roles/deploy/tasks/main.yml
+  226  ansible-playbook master.yml
+  227  ll
+  228  rm roles/
+  229  rm -rf roles/
+  230  ll
+  231  vim master.yml
+  232  ansible-playbook master.yml
+  233  vim master.yml
+  234  history
