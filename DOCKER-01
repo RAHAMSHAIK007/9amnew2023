@@ -1,0 +1,40 @@
+  1  yum install docker -y
+    2  docker --version
+    3  docker version
+    4  systemctl start docker
+    5  systemctl status docker
+    6  docker version
+    7  docker images
+    8  docker search ubuntu
+    9  docker pull ubuntu
+   10  docker images
+   11  docker run ubuntu
+   12  docker images
+   13  docker ps -a
+   14  docker run --name raham ubuntu
+   15  docker ps -a
+   16  docker run --name raham1 ubuntu -it
+   17  docker run -it --name raham2 ubuntu
+   18  docker images
+   19  docker pull amazonlinux
+   20  docker images
+   21  docker run -it --name raham3 amazonlinux
+   22  cd /
+   23  du -sh
+   24  cd
+   25  docker ps
+   26  docker ps -a
+   27  docker start raham3
+   28  docker ps -a
+   29  docker attach raham3
+   30  docker ps -a
+   31  docker start raham3
+   32  docker ps -a
+   33  docker run -it --name mycont ubuntu
+   34  docker ps -
+   35  docker ps -a
+   36  docker attach mycont
+   37  docker ps -a
+   38  docker commit mycont raham
+   39  docker run -it --name abcd raham
+   40  history
