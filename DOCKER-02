@@ -1,0 +1,101 @@
+  1  yum install docker -y
+    2  sudo yum install docker -y
+    3  systemctl start docker
+    4  systemctl status docker
+    5  vim Dockerfile
+    6  docker dockedefault-jredocker
+    7  docker images
+    8  docker build -t raham:v1 .
+    9  vim Dockerfile
+   10  docker build -t raham:v1 .
+   11  docker images
+   12  cat Dockerfile
+   13  docker run -it --name cont1 raham:v1
+   14  docker ps
+   15  docker container ls
+   16  vim Dockerfile
+   17  cat Dockerfile
+   18  docker build -t raham:v1 .
+   19  docker run -it --name cont2 raham:v1
+   20  vim Dockerfile
+   21  docker build -t raham:v2 .
+   22* docker run -it --name cont3 raham:v2 docker docker
+   23  vim Dockerfile
+   24  docker run -it --name cont4 raham:v2
+   25  docker build -t raham:v2 .
+   26  docker ps -a
+   27  docker run -it --name cont5 raham:v2
+   28  vim Dockerfile
+   29  docker build -t raham:v2 .
+   30  docker run -it --name cont6 raham:v2
+   31  cat Dockerfile
+   32  mkdir abcd
+   33  cd abcd/
+   34  ll
+   35  vim Dockerfile
+   36  docker build -t abc:v1 .
+   37  docker run -it --name cont9 abc:v1
+   38  vim Dockerfile
+   39  docker build -t abcd:v1 .
+   40  docker run -it --name cont8 abcd:v1
+   41  cd
+   42  ll
+   43  rm -rf abcd/
+   44  ll
+   45  vim Dockerfile
+   46  ll
+   47  vim index.html
+   48  docker build -t raham:v3 .
+   49  docker run -it --name cont11 raham:v3
+   50  ll
+   51  vim Dockerfile
+   52  docker build -t raham:v3 .
+   53  docker run -it --name cont12 raham:v3
+   54  docker ps -a
+   55  vim Dockerfile
+   56  docker build -t raham:v3 .
+   57  docker run -it --name cont13 raham:v3
+   58  cat Dockerfile
+   59  docker ps
+   60  docker stop cont13
+   61  docker kill cont12
+   62  docker ps -a
+   63  docker ps -a
+   64  docker rm cont13
+   65  docker ps -a
+   66  docker rm *
+   67  docker rm -rf *
+   68  docker rm cont*
+   69  docker ps -a
+   70  docker stop cont1
+   71  docker ps -a
+   72  docker ps -a -q
+   73  docker rm $(docker ps -a -q)
+   74  docker ps -a -q
+   75  docker ps -a
+   76  ll
+   77  rm -rf *
+   78  ll
+   79  vim Dockerfile
+   80  docker build -t swiggy:v1 .
+   81  cat Dockerfile
+   82  ll
+   83  vim index.html
+   84  docker build -t swiggy:v1 .
+   85  docker run -it --name cont1 -p 80:80 swiggy:v1
+   86  history
+[root@ip-172-31-39-198 ~]#
+
+
+TERMINAL 2:
+
+ 1  docker images
+    2  docker login
+    3  docker tag swiggy:v1 scsekhar333/swiggy
+    4  docker images
+    5  docker push scsekhar333/swiggy
+    6  docker images
+    7  docker rmi -f $(docker images -q)
+    8  docker ps -a -1
+    9  docker ps -a -q
+   10  history
