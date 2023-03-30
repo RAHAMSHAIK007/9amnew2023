@@ -1,0 +1,82 @@
+ 1  yum install docker -y
+    2  sytemctl start docker
+    3  systemctl start docker
+    4  systemctl status docker
+    5  vim Dockerfile
+    6  cat Dockerfile
+    7  docker build -t swiggy:v1 .
+    8  vim Dockerfile
+    9  docker build -t swiggy:v1 .
+   10  docker run -itd --name cont1 swiggy:v1
+   11  docker ps
+   12  docker attach cont1
+   13  ll
+   14  docker ps -a
+   15  docker run -it --name cont2 --volumes-from cont1 --privileged=true ubuntu
+   16  docker attach cont1
+   17  docker run -it --name cont3 -v /abcd ubuntu
+   18  docker run -it --name cont4 --volumes-from cont3 --privileged=true ubuntu
+   19  docker volume ls
+   20  docker volume create zomato
+   21  docker volume ls
+   22  docker volume inspect zomato
+   23  docker inspect cont1
+   24  docker volume ls
+   25  docker volume create swiggy
+   26  docker volume ls
+   27  docker volume rm zomato
+   28  docker volume ls
+   29  docker volume inspect swiggy
+   30  cd /var/lib/docker/volumes/swiggy/_data
+   31  touch raham{1..10}
+   32  ll
+   33  cd
+   34  docker run -it --name cont5 --mount src=swiggy, dest=/swiggy ubuntu
+   35  docker run -it --name cont5 --mount src=/swiggy, dest=/swiggy ubuntu
+   36  docker run -it --name cont5 --mount source=swiggy,destination=/swiggy ubuntu
+   37  docker run -it --name cont6 --volumes-from cont5 --privileged=true ubuntu
+   38  cd /home/ec2-user/
+   39  ll
+   40  touch hostfile{1..5}
+   41  ll
+   42  ls -al
+   43  docker run -it --name cont7 -v /home/ec2-user:/abcde ubuntu
+   44  ll
+   45  cd
+   46  docker run -it --name cont8 -v /rahamsir ubuntu
+   47  docker volume ls
+   48  docker attach cont8
+   49  docker volume ls
+   50  docker inspect 85748c626cd3f5db6402e139142f5321e9107ae1affc91128c201eae29264022
+   51  cd /var/lib/docker/volumes/85748c626cd3f5db6402e139142f5321e9107ae1affc91128c201eae29264022/_data
+   52  ll
+   53  docker inspect 71215ecf7d31fda4ef0b6a618a3b320e23df06ae75bd6363d3144d7359a0ba37
+   54  cd /var/lib/docker/volumes/71215ecf7d31fda4ef0b6a618a3b320e23df06ae75bd6363d3144d7359a0ba37/_data
+   55  ll
+   56  cp -r * /root/
+   57  cd /root/
+   58  ll
+   59  docker volume ls
+   60  docker system df -v
+   61  docker system df
+   62  docker system
+   63  docker system events
+   64  docker system info
+   65  docker pull amamzonlinux
+   66  docker pull amazonlinux
+   67  docker volume create abcd
+   68  docker system prune
+   69  docker volume ls
+   70  docker images
+   71  docker volume prune
+   72  docker image prune
+   73  dockerimages
+   74  docker images
+   75  docker ps -a
+   76  docker rm cont1
+   77  docker kill cont1
+   78  docker rm cont1
+   79  docker volume ls
+   80  docker pull jenkins/jenkins:lts
+   81  docker run -it --name jenkinscont -p 8080:8080 jenkins/jenkins:lts
+   82  history
