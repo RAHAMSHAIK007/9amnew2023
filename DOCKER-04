@@ -1,0 +1,76 @@
+ 1  docker swarm init --advertise-addr 172.31.2.142
+    2  docker node ls
+    3  docker service create --name app1 --replicas 3 --publish 80:80 httpd
+    4  docker ps -a
+    5  docker service ls
+    6  vim Dockerfile
+    7  vim index.html
+    8  docker build -t raham .
+    9  docker images
+   10  docker tag raham scsekhar333/devopsapp
+   11  docker images
+   12  docker push scsekhar333/devopsapp
+   13  docker login
+   14  docker images
+   15  docker push scsekhar333/devopsapp
+   16  docker images
+   17  docker tag raham rahamshaik/devopsapp
+   18  docker push rahamshaik/devopsapp
+   19  docker service ls
+   20  docker service create --name devopsapp --publish 81:80 --replicas 6 rahamshaik/devopsapp
+   21  docker ps -a
+   22  docker service ls
+   23  docker service devopsapp ps
+   24  docker service ps devopsapp
+   25  docker ps -a
+   26  docker kill devopsapp.6.m1krgdllbnw03wl476cbj8qvl
+   27  docker ps -a
+   28  docker service ls
+   29  docker service scale devopsapp=10
+   30  docker service ls
+   31  docker service scale devopsapp=5
+   32  docker service ls
+   33  docker service devopsapp ps
+   34  docker service ps devopsapp
+   35  docker service logs devopsapp
+   36  docker service images devopsapp
+   37  docker service devopsapp images
+   38  docker service ls
+   39  docker service inspect devopsapp
+   40  docker node ls
+   41  docker swarm join-token manger
+   42  docker swarm join-token manager
+   43  docker ps -a
+   44  docker node ls
+   45  docker ps -a
+   46  docker node ls
+   47  docker node rm rflp5em0eegkijwmnyz9edj7w
+   48  docker noder rm lgfopdq94awjkf1b8n110ir0s
+   49  docker node rm lgfopdq94awjkf1b8n110ir0s
+   50  docker node rm x0hp2mgllkxdda45eigkwmb89
+   51  docker node ls
+   52  docker node rm ea58bsqwqdztz4xclmtbzedwu
+   53  docker node ls
+   54  docker node rm ea58bsqwqdztz4xclmtbzedwu
+   55  docker service ls
+   56  docker service rm devopsapp
+   57  docker service ls
+   58  docker service rm app1
+   59  docker service ls
+   60  docker ps -a
+   61  docker rm 9ef40e603251
+   62  docker ps -a
+   63  docker run --cpus="0.2" -it --name cont1 ubuntu
+   64  docker inspect cont1
+   65  docker run -it --cpus="0.5" --name cont2 ubuntu
+   66  docker inspect cont2
+   67  docker run --memory=50M -it --name cont3 ubuntu
+   68  docker inspect cont3
+   69  docker run -it --name cont3 ubuntu --memory=20MB
+   70  docker run -it --name cont4 ubuntu --memory=20MB
+   71  docker system df -v
+   72  docker ps -a
+   73  docker top cont3
+   74  docker top cont4
+   75  docker top cont2
+   76  history
