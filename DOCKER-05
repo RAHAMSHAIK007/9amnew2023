@@ -1,0 +1,83 @@
+ 1  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    2  sudo chmod +x /usr/local/bin/docker-compose
+    3  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    4  docker-compose --version
+    5  vim docker-compose.yml
+    6  docker --version
+    7  yum install docker -y
+    8  service docker start
+    9  service docker status
+   10  docker-compose up -d
+   11  vim docker-compose.yml
+   12  docker-compose up -d
+   13  docker ps -a
+   14  vim docker-compose.yml
+   15  docker-compose up -d
+   16  docker-compose ps -a
+   17  docker-compose images
+   18  docker-compose logs
+   19  docker-compose stop
+   20  docker-compose up
+   21  docker-compose ps -a
+   22  docker ps -a
+   23  docker-compose down
+   24  docker ps -a
+   25  ll
+   26  mv docker-compose.yml raham-compose.yml
+   27  docker-compose up -d
+   28  docker-compose -f raham-compose.yml up -d
+   29  docker-compose images
+   30  docker-compose -f raham-compose.yml images
+   31  docker-compose -f raham-compose.yml pa
+   32  docker-compose -f raham-compose.yml ps
+   33* docker-compose -f raham-compose.yml do
+   34  docker network ls
+   35  docker network create raham
+   36  docker network ls
+   37  docker inspect 2c228cd2fcb4
+   38  docker images
+   39* docker run -itd --name cont1 ubuntu
+   40  docker pull ubuntu
+   41  docker run -itd --name cont1 rahamshaik/phonepayrecharges:v1
+   42  docker ps -a
+   43  docker network connect raham 7622b77a81e7
+   44  docker network inspect raham
+   45  docker run -itd --name cont2 ubuntu
+   46  docker attach cont2
+   47  docker ps -a
+   48  docker network connect raham b6bf1345c546
+   49  docker attach cont2
+   50  docker network ls
+   51  docker inspect raham
+   52  docker network rm raham b6bf1345c546
+   53  docker network disconnect raham b6bf1345c546
+   54  docker inspect raham
+   55  docker network rm raham
+   56  docker network disconnect raham cont1
+   57  docker network rm raham
+   58  docker ps -a
+   59  docker swarm init --advertise-addr 52.66.240.60
+   60  curl -L https://downloads.portainer.io/ce2-16/portainer-agent-stack.yml -o portainer-agent-stack.yml
+   61  ll
+   62  vim portainer-agent-stack.yml
+   63  docker-compose -f portainer-agent-stack.yml up -d
+   64  docker ps -a
+   65  docker stop $(docker ps -a -q)
+   66  docker rm $(docker ps -a -q)
+   67  ll
+   68  rm -rf raham-compose.yml
+   69  ll
+   70  docker stack deploy -c portainer-agent-stack.yml portainer
+   71  docker ps
+   72  docker ps -a
+   73  docker stack ls
+   74  docker ps -a
+   75  docker volume ls
+   76  docker imaged
+   77  docker images
+   78  docker ps
+   79  docker rename cont5 cont6
+   80  docker ps
+   81  docker rename cont6 cont7
+   82  docker ps
+   83  history
