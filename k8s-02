@@ -1,0 +1,139 @@
+  1  vim minikube.sh
+    2  sh minikube.sh
+    3  minikube status
+    4  kubectl get po
+    5  kubectl create pod raham --image=nginx
+    6  kubectl create raham --image=nginx
+    7  kubectl create pod raham --image=nginx
+    8  kubectl run pod raham --image=nginx
+    9  kubectl get pods
+   10  kubectl get pod
+   11  kubectl get po
+   12  kubectl delete pod pod
+   13  kubectl run raham --image=nginx
+   14  kubectl get po
+   15  kubectl get po -o wide
+   16  kubectl describe pod raham
+   17  kubectl run rcb --image=httpd
+   18  kubectl get po
+   19  kubectl get po -o wide
+   20  kubectl describe pod rcb
+   21  kubectl get po
+   22  kubectl delete pod raham
+   23  kubectl delete pod rcb'
+   24  kubectl delete pod rcb
+   25  kubectl get po
+   26  vim pod.yml
+   27  vim raham.yml
+   28  ll
+   29  kubectl apply -f raham.yml
+   30  vim raham.yml
+   31  kubectl get po
+   32  vim raham.yml
+   33  kubectl apply -f raham.yml
+   34  vim raham.yml
+   35  kubectl apply -f raham.yml
+   36  kubectl get po
+   37  kubectl delete pod raham
+   38  vim replicset.yml
+   39  kubectl api-resources
+   40  vim replicset.yml
+   41  kubectl get po
+   42  kubectl apply -f replicset.yml
+   43  kubectl get replicaset
+   44  kubectl get rs
+   45  kubectl get po
+   46  kubectl describe rs swiggy-rs
+   47  kubectl get po
+   48  kubectl delete pod swiggy-rs-zqpw6
+   49  kubectl get po
+   50  kubectl delete pod swiggy-rs-9lmgt
+   51  kubectl get po
+   52  kubectl get rs
+   53  kubectl scale rs swiggy-rs --replicas=10
+   54  kubectl get rs
+   55  kubectl get po
+   56  kubectl scale rs swiggy-rs --replicas=6
+   57  kubectl get rs
+   58  kubectl get po
+   59  kubectl delete rs swiggy-rs
+   60  kubectl get po
+   61  vim replicset.yml
+   62  mv replicset.yml deployment.yml
+   63  ll
+   64  kubectl apply -f deployment.yml
+   65  kubectl get deploy
+   66  kubectl get rs
+   67  kubectl get po
+   68  vim deployment.yml
+   69  kubectl describe deploy swiggy-deploy
+   70  kubectl describe rs swiggy-deploy
+   71  kubectl get po
+   72  kubectl describe pod swiggy-deploy-7f49db7b7f-54ph9
+   73  kubectl apply -f deployment.yml
+   74  kubectl describe pod swiggy-deploy-7f49db7b7f-54ph9
+   75  kubectl get po
+   76  kubectl describe pod swiggy-deploy-5696798697-bnfz9
+   77  kubectl get po
+   78  kubectl describe pod swiggy-deploy-5696798697-bnfz9
+   79  kubectl get po
+   80  kubectl describe pod swiggy-deploy-5696798697-bnfz9
+   81  vim deployment.yml
+   82  kubectl get po
+   83  kubectl apply -f deployment.yml
+   84  kubectl get po
+   85  kubectl describe pod swiggy-deploy-cb5c98959-l8l5l
+   86  history
+==================================================================================================================================================================================
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+spec:
+  containers:
+  - name: cont1
+    image: nginx
+======================================================================================================================================================
+REPLICASET:
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  labels:
+    run: raham
+  name: raham-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: raham
+  template:
+    metadata:
+      labels:
+        run: raham
+    spec:
+      containers:
+      - name: cont1
+        image: nginx
+======================================================================================================================================================
+DEPLOYMENT:
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: raham
+  name: raham-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: raham
+  template:
+    metadata:
+      labels:
+        run: raham
+    spec:
+      containers:
+      - name: cont1
+        image: nginx
