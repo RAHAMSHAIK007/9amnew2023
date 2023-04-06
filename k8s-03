@@ -78,3 +78,5 @@ kops create cluster --name rahamssshaik09.k8s.local --zones us-east-1a  --master
    42  kops get cluster
    43  export KOPS_STATE_STORE=s3://rahamssshaik09.k8s.local
    44  history
+   45  kops delete cluster --name rahamssshaik09.k8s.local --yes
+
