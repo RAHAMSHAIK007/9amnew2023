@@ -1,0 +1,80 @@
+
+1. create iam user & generate keys & configure the use (aws configure)
+
+
+aws configure
+AWS Access Key ID [None]: xxxxxxxxxxxxxxxxxx
+AWS Secret Access Key [None]: xxxxxxxxxxxxxxxxxx
+Default region name [None]: us-east-1
+Default output format [None]: table
+
+=========================================================================================
+
+2. INSTALLING KOPS & KUBECTL
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+wget https://github.com/kubernetes/kops/releases/download/v1.24.1/kops-linux-amd64
+chmod +x kops-linux-amd64 kubectl
+mv kubectl /usr/local/bin/kubectl
+mv kops-linux-amd64  /usr/local/bin/kops
+vim .bashrc
+export PATH=$PATH:/usr/local/bin/
+source .bashrc
+kops version
+kubectl version 
+
+=======================================================================
+
+3. INFRA CREATION
+
+
+aws s3api create-bucket --bucket rahamssshaik09.k8s.local --region us-east-1
+aws s3api put-bucket-versioning --bucket rahamssshaik09.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
+export KOPS_STATE_STORE=s3://rahamssshaik09.k8s.local
+kops create cluster --name rahamssshaik09.k8s.local --zones us-east-1a  --master-size t2.medium --node-size t2.micro
+
+===============================
+1  aws configure
+    2  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+    3  wget https://github.com/kubernetes/kops/releases/download/v1.24.1/kops-linux-amd64
+    4  ll
+    5  chmod +x kops-linux-amd64 kubectl
+    6  mv kops-linux-amd64 /usr/local/bin/kops
+    7  mv kubectl /usr/local/bin/kubectl
+    8  kops version
+    9  vim .bashrc
+   10  source .bashrc
+   11  kubectl get ns
+   12  kubectl run raham --image=nginx
+   13  kubectl describe pod raham
+   14  kubectl get ns
+   15  kubectl get all
+   16  kubectl get deploy
+   17  kubectl delete deploy raham-deploy
+   18  kubectl get all -A
+   19  kubectl get ms
+   20  kubectl get ns
+   21  kubectl create ns raham
+   22  kubectl get ns
+   23  kubectl config set-context $(kubectl config current-context) --namespace=raham
+   24  ll
+   25  kubectl create -f deploy.yml
+   26  kubectl get po -o wide
+   27  kubectl describe pod raham-deploy-5fb67778b6-5p8xj
+   28  kubectl get po -o wide
+   29  kubectl config set-context $(kubectl config current-context) --namespace=default
+   30  kubectl get po -o wide
+   31  kubectl get ns
+   32  kubectl create ns devops
+   33  kubectl get po -o wide
+   34  kubectl config set-context $(kubectl config current-context) --namespace=raham
+   35  kubectl get po -o wide
+   36  kubectl config set-context $(kubectl config current-context) --namespace=devops
+   37  kubectl get po -o wide
+   38  kubectl delete ns devops
+   39  kubectl delete ns raham
+   40  kubectl get po -n raham
+   41  kubectl get ns
+   42  kops get cluster
+   43  export KOPS_STATE_STORE=s3://rahamssshaik09.k8s.local
+   44  history
