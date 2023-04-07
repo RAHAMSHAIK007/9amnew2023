@@ -1,0 +1,112 @@
+SERVICES: A WAY OF EXPOSING THE APPLICATION
+TYPES: 
+
+pod.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fe
+  labels:
+    app: phonepay
+spec:
+  containers:
+    - name: cont1
+      image: rahamshaik/phonepaymovies:v1
+      ports:
+      - containerPort: 80
+
+
+1. CLUSTERIP: Expose the aplication inside the Cluster (DB)
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe
+spec:
+  type: ClusterIP
+  selector:
+    app: phonepay
+  ports:
+    - port: 80
+      targetPort: 80
+
+
+2. NodePort: Expose the aplication outside the Cluster (UI) 
+   Node Port Range= 30000 - 32767
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe
+spec:
+  type: NodePort
+  selector:
+    app: phonepay
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30001
+
+3. LoadBalancer: Expose the aplication outside the Cluster by Using Cloud LoadBalncer.
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe
+spec:
+  type: LoadBalancer
+  selector:
+    app: phonepay
+  ports:
+    - port: 80
+      targetPort: 80
+
+4. demonset: make sure that all worker node has same pods
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    run: raham
+  name: swiggydeaminset
+spec:
+  selector:
+    matchLabels:
+      run: raham
+  template:
+    metadata:
+      labels:
+        run: raham
+    spec:
+      containers:
+      - name: cont1
+        image: nginx
+
+================================================================================
+
+JFROG: It is an artifactory tool used to store the arifacts
+Artifact: JAR, WAR & EAR
+
+Why we need to store:
+
+to roll back and rollout.
+
+HOW YOU GET ARTIFACT ?
+Git (source code) + Jenkins (CI) + Maven (Build) = Artifact
+
+by defaylt it will stotre on /var/lib/jenkins/workspace 
+from there we can copy to our jfrog server
+
+INSTALLATION:
+AMI: LINUX AMI INSTANCE: T2 MEDIUM S.G : 8081 & ANYWHERE
+wget https://releases.jfrog.io/artifactory/artifactory-rpms/artifactory-rpms.repo -O jfrog-artifactory-rpms.repo
+mv jfrog-artifactory-rpms.repo /etc/yum.repos.d/
+yum update -y && yum install jfrog-artifactory-oss -y
+systemctl start artifactory.service 
+systemctl enable artifactory.service 
+systemctl status artifactory.service
+creds: admin
+password: password
+
