@@ -1,0 +1,104 @@
+  96  vim main.tf
+   97  cat main.tf
+   98  terraform init
+   99  terraform validte
+  100  terraform validate
+  101  vim main.tf
+  102  terraform validate
+  103  vim main.tf
+  104  terraform validate
+  105  vim main.tf
+  106  terraform validate
+  107  terraform plan
+  108  terraform apply --auto-approve
+  109  vim main.tf
+  110  terraform apply --auto-approve
+  111  cat main.tf
+  112  cat terraform.tfstate
+  113  terraform graph
+  114  terraform destroy --auto-approve
+  115  terraform workspace
+  116  terraform workspace  show
+  117  terraform workspace new
+  118  terraform workspace new test
+  119  terraform workspace show
+  120  terraform workspace list
+  121  vim main.tf
+  122  echo $terraform.workspace
+  123  echo ${terraform.workspace}
+  124  terraform workspace show
+  125  cat main.tf
+  126  terraform validate
+  127  terraform apply --auto-approve
+  128  terraform workspace new prod
+  129  vim main.tf
+  130  terraform apply --auto-approve
+  131  terraform workspace delete prod
+  132  terraform workspace switch test
+  133  terraform workspace select test
+  134  terraform workspace delete prod
+  135  terraform workspace select prod
+  136  terraform destroy --auto-approve
+  137  terraform state list
+  138  terraform workspace select test
+  139  terraform workspace delete prod
+  140  terraform state list
+  141  terraform destroy --auto-approve
+  142  terraform workspace select default
+  143  terraform workspace delete test
+  144  terraform workspace list
+  145  terraform workspace
+  146  vim main.tf
+  147  terraform apply --auto-approve
+  148  vim main.tf
+  149  terraform apply --auto-approve
+  150  terraform state list
+  151  terraform taint aws_instance.two
+  152  terraform taint aws_instance.four
+  153  terraform taint
+  154  terraform state list
+  155  terraform apply --auto-approve
+  156  terraform state list
+  157  terraform taint aws_instance.two aws_instance.four
+  158  terraform taint [aws_instance.two, aws_instance.four]
+  159  terraform taint aws_instance.two, aws_instance.four
+  160  terraform taint aws_instance.two
+  161  terraform taint aws_instance.four
+  162  terraform untaint aws_instance.four
+  163  terraform apply --auto-approve
+  164  terraform state list
+  165  terraform apply -replace="aws_instance.two" --auto-approve
+  166  history
+
+==============================
+
+
+locals {
+env = "zomato-prod"
+}
+
+resource "aws_vpc" "one" {
+cidr_block = "10.5.0.0/16"
+tags = {
+Name = "${local.env}-vpc"
+}
+}
+
+resource "aws_subnet" "two" {
+vpc_id = aws_vpc.one.id
+cidr_block = "10.5.0.0/16"
+tags = {
+Name = "${local.env}-subnet"
+}
+}
+
+resource "aws_instance" "three" {
+subnet_id = aws_subnet.two.id
+ami = "ami-03c7d01cf4dedc891"
+instance_type = "t2.micro"
+tags = {
+Name = "${local.env}-server"
+}
+}
+
+-------------------------------
