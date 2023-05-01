@@ -1,0 +1,143 @@
+DYNAMIC BLOCK:
+
+provider "aws" {
+}
+
+locals {
+  ingress_rules = [{
+    port        = 443
+    description = "Ingress rules for port 443"
+    },
+    {
+      port        = 80
+      description = "Ingree rules for port 80"
+    },
+    {
+      port        = 8080
+      description = "Ingree rules for port 80"
+  }]
+}
+
+resource "aws_instance" "ec2_example" {
+  ami                    = "ami-03c7d01cf4dedc891"
+  instance_type          = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.main.id]
+  tags = {
+    Name = "Terraform EC2"
+  }
+}
+
+resource "aws_security_group" "main" {
+
+  egress = [
+    {
+      cidr_blocks      = ["0.0.0.0/0"]
+      description      = "*"
+      from_port        = 0
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+      protocol         = "-1"
+      security_groups  = []
+      self             = false
+      to_port          = 0
+  }]
+
+  dynamic "ingress" {
+    for_each = local.ingress_rules
+
+    content {
+      description = "*"
+      from_port   = ingress.value.port
+      to_port     = ingress.value.port
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+
+  tags = {
+    Name = "terra sg"
+  }
+}
+
+====================================================================================================================================
+
+ALIAS & PROVIDERS :
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+provider "aws" {
+alias = "south"
+region = "ap-south-1"
+}
+
+resource "aws_instance" "one" {
+ami = "ami-0b0dcb5067f052a63"
+instance_type = "t2.micro"
+tags = {
+Name = "nvirginia"
+}
+}
+
+resource "aws_instance" "two" {
+ami = "ami-0a2457eba250ca23d"
+instance_type = "t2.micro"
+provider = "aws.south"
+tags = {
+Name = "mumbai"
+}
+}
+
+
+=====================================================================================================================================================
+
+resource "aws_s3_bucket" "one" {
+bucket = "rahamterra55677"
+}
+
+resource "aws_ebs_volume" "example" {
+  availability_zone = "us-east-1a"
+  size              = 40
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+resource "aws_db_instance" "default" {
+  allocated_storage    = 10
+  db_name              = "mydb"
+  engine               = "mysql"
+  engine_version       = "5.7"
+  instance_class       = "db.t3.micro"
+  username             = "foo"
+  password             = "Raham123#"
+  parameter_group_name = "default.mysql5.7"
+  skip_final_snapshot  = true
+}
+
+=========================================================================================================================================================================================
+
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = ">4.61.0, <4.65.0, !=4.64.0"
+    }
+  }
+}
+
+terraform {
+  required_providers {
+    local = {
+      source = "hashicorp/local"
+      version = "2.2.1"
+    }
+  }
+}
+
+=========================================================================================================================================================================================
+
+
+
